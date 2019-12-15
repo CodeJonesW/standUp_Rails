@@ -1,6 +1,7 @@
 require 'faker'
 
 Company.destroy_all
+
 # Activity.destroy_all
 # ActivityComment.destroy_all
 # Goal.destroy_all
@@ -13,20 +14,6 @@ Company.destroy_all
     # Consumption.all.each {|consumption| consumption.created_at = (rand*7).days.ago; consumption.save}
     # Goal.all.each {|goal| goal.created_at = (rand*7).days.ago; goal.save}
     
-    # 4.times do 
-    #     User.create(:username => Faker::Internet.username, 
-    #     :name => Faker::Name.name,
-    #     :age => Faker::Number.within(range: 1..100),
-    #     :weight => Faker::Number.within(range: 100..300),
-    #     :height => Random.new.rand(5.0...6.9).to_s[0..2],
-    #     :email => Faker::Internet.email,
-    #     :password => '123',
-    #     :gender => Faker::Gender.binary_type)
-    # end
-
-    # User.create(:username => "CodeJonesW", :name => "Will Jones", :age => 27, :weight => 180, :height => "6.4", :email => "willjones@blah.com", password: '123', :gender => 'male')
-
-
     4.times do 
         Company.create(:name => Faker::Company.name, 
         :about => Faker::Company.industry,
@@ -34,4 +21,22 @@ Company.destroy_all
         :premium => true)
 
     end
+
+    coLength = Company.all.length
+
+    4.times do 
+        User.create(:username => Faker::Internet.username, 
+        :first_name => Faker::Name.first_name,
+        :last_name => Faker::Name.last_name,
+        :age => Faker::Number.within(range: 1..55),
+        :email => Faker::Internet.email,
+        :gender => Faker::Gender.binary_type,
+        :company_id => Faker::Number.within(range: 1..coLength-1)
+        )
+    end
+
+    # User.create(:username => "CodeJonesW", :name => "Will Jones", :age => 27, :weight => 180, :height => "6.4", :email => "willjones@blah.com", password: '123', :gender => 'male')
+
+
+
 
