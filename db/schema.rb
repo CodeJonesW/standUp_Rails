@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2019_12_15_022610) do
     t.string "name"
     t.string "about"
     t.string "location"
-    t.boolean "private", default: false
+    t.boolean "premium", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

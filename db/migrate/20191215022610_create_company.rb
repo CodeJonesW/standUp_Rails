@@ -4,7 +4,7 @@ class CreateCompany < ActiveRecord::Migration[5.2]
           t.string :name
           t.string :about
           t.string :location
-          t.boolean :private, default: false
+          t.boolean :premium, default: false
           t.timestamps
     end
   end

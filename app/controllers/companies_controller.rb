@@ -23,7 +23,7 @@ class CompaniesController < ApplicationController
     def destroy
        if  @company = Company.destroy(params[:id])
             company = CompanySerializer.new(@company)
-            render json: {company: company}
+            # render json: {company: company}
        end
     end
 
