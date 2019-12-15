@@ -5,7 +5,7 @@ class CompaniesController < ApplicationController
     end
 
     def create
-        @company = Company.create(a_params)
+        @company = Company.create(c_params)
         company = UserSerializer.new(@company)
         render json: {company: company}
     end
@@ -29,7 +29,7 @@ class CompaniesController < ApplicationController
 
     def update
         @company = Company.find(params[:id])
-        if @company.update(a_params)
+        if @company.update(c_params)
             # user = UserSerializer.new(@user)
             # render json: {user: user}
             company = CompanySerializer.new(@company)
@@ -42,7 +42,7 @@ class CompaniesController < ApplicationController
 
     private
 
-	def a_params
+	def c_params
 		params.require(:company).permit(:name, :about, :private, :location)
     end
 end
