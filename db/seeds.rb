@@ -2,12 +2,6 @@ require 'faker'
 
 Company.destroy_all
 
-# Activity.destroy_all
-# ActivityComment.destroy_all
-# Goal.destroy_all
-# Consumption.destroy_all
-# ConsumptionComment.destroy_all
-
     # Run in rails console to alter the created at dates to see full function of graphs
 
     # Activity.all.each {|activity| activity.created_at = (rand*7).days.ago; activity.save}
