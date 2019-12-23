@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 2019_12_23_233544) do
   create_table "teams", force: :cascade do |t|
     t.integer "company_id"
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -34,6 +36,7 @@ ActiveRecord::Schema.define(version: 2019_12_23_233544) do
     t.integer "age"
     t.string "gender"
     t.integer "company_id"
+    t.integer "team_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
