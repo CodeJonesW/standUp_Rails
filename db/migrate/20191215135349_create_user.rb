@@ -9,7 +9,6 @@ class CreateUser < ActiveRecord::Migration[5.2]
       t.string :gender
       t.integer :company_id
       # t.string :password_digest
-
       t.timestamps
     end
   end
