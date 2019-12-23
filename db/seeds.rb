@@ -2,12 +2,6 @@ require 'faker'
 
 Company.destroy_all
 
-    # Run in rails console to alter the created at dates to see full function of graphs
-
-    # Activity.all.each {|activity| activity.created_at = (rand*7).days.ago; activity.save}
-    # Consumption.all.each {|consumption| consumption.created_at = (rand*7).days.ago; consumption.save}
-    # Goal.all.each {|goal| goal.created_at = (rand*7).days.ago; goal.save}
-    
     4.times do 
         Company.create(:name => Faker::Company.name, 
         :about => Faker::Company.industry,
@@ -29,7 +23,7 @@ Company.destroy_all
         )
     end
 
-    # User.create(:username => "CodeJonesW", :name => "Will Jones", :age => 27, :weight => 180, :height => "6.4", :email => "willjones@blah.com", password: '123', :gender => 'male')
+    User.create(:username => "CodeJonesW", :first_name => "Will", :last_name => "Jones", :age => 27, :email => "willjones@code.com", :gender => 'male', company_id: 1)
 
 
 
