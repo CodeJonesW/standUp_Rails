@@ -1,6 +1,6 @@
 class StandupsController < ApplicationController
     def index
-        @standups = standup.all
+        @standups = Standup.all
         render json: @standups
     end
 
