@@ -1,7 +1,5 @@
 require 'faker'
 
-Company.destroy_all
-
     # Run in rails console to alter the created at dates to see full function of graphs
 
     # Activity.all.each {|activity| activity.created_at = (rand*7).days.ago; activity.save}
@@ -16,6 +14,8 @@ Company.destroy_all
 
     end
 
+    Team.create(:company_id => 1, :name => "Team1")
+
     coLength = Company.all.length
 
     4.times do 
@@ -25,7 +25,8 @@ Company.destroy_all
         :age => Faker::Number.within(range: 1..55),
         :email => Faker::Internet.email,
         :gender => Faker::Gender.binary_type,
-        :company_id => Faker::Number.within(range: 1..coLength-1)
+        :company_id => Faker::Number.within(range: 1..coLength-1),
+        :team_id => 1
         )
     end
 
