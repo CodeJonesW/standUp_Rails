@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   resources :users
   resources :companies, except: [:destroy]
   resources :teams
+  resources :standups
 end
