@@ -10,13 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_23_233544) do
+ActiveRecord::Schema.define(version: 2019_12_24_063042) do
 
   create_table "companies", force: :cascade do |t|
     t.string "name"
     t.string "about"
     t.string "location"
     t.boolean "premium", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "standups", force: :cascade do |t|
+    t.integer "company_id"
+    t.integer "team_id"
+    t.integer "user_id"
+    t.string "yesterday"
+    t.string "today"
+    t.string "blocker"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
