@@ -30,6 +30,16 @@ require 'faker'
         )
     end
 
+    4.times do
+    Standup.create(:user_id => Faker::Number.within(range: 1..User.all.length-1),
+     :company_id => Faker::Number.within(range: 1..coLength-1),
+     :team_id => Faker::Number.within(range: 1..Team.all.length-1),
+     :yesterday => Faker::TvShows::GameOfThrones.quote,
+     :today => Faker::TvShows::GameOfThrones.quote,
+     :blocker => Faker::TvShows::GameOfThrones.quote)
+    end
+
+
     # User.create(:username => "CodeJonesW", :name => "Will Jones", :age => 27, :weight => 180, :height => "6.4", :email => "willjones@blah.com", password: '123', :gender => 'male')
 
 
