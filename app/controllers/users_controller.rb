@@ -37,7 +37,7 @@ class UsersController < ApplicationController
             user = UserSerializer.new(@user)
             render json: {user: user}
         else
-            render json: @company.errors, status: :unprocessable_entity
+            render json: @user.errors, status: :unprocessable_entity
         end
     end
 
